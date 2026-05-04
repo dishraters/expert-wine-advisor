@@ -22,7 +22,7 @@ const services = [
 ];
 
 const reasons = [
-  "Formal wine education",
+  "Formal study in viticulture",
   "Real wine manufacturing experience",
   "Practical, not theoretical, recommendations",
   "Strong palate and product judgment",
@@ -53,7 +53,7 @@ export default function Home() {
               Expert Wine Consulting for Brands, Restaurants & Collectors
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#f3dfc7] sm:text-xl">
-              Practical guidance from a wine manufacturing professional with formal wine education and hands-on industry experience.
+              Practical guidance from a wine manufacturing professional with formal viticulture education and hands-on industry experience.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
         <div className="space-y-6 text-lg leading-8 text-[#4a3d3e]">
           <p>
-            Andrew Misialek is a wine manufacturer, wine degree holder, and consultant helping wineries, restaurants, hospitality teams, collectors, event hosts, and wine brands make better decisions with confidence.
+            Andrew Misialek is a wine manufacturer with formal study in viticulture and consulting experience helping wineries, restaurants, hospitality teams, collectors, event hosts, and wine brands make better decisions with confidence.
           </p>
           <p>
             His work spans wine selection, production, sourcing, tasting, education, and strategy. The approach is refined but grounded: clear recommendations, careful palate judgment, and practical guidance shaped by real wine manufacturing experience.
