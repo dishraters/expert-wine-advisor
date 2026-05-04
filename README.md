@@ -1,6 +1,6 @@
 # Expert Wine Advisor
 
-A premium, mobile-responsive wine consulting website built with Next.js and Tailwind CSS. The site positions a wine manufacturing professional with formal wine education as a credible advisor for wine brands, restaurants, hospitality groups, private collectors, and events.
+A premium, mobile-responsive wine consulting website built with Next.js and Tailwind CSS. The site positions Andrew Misialek, a wine manufacturing professional with formal wine education, as a credible advisor for wine brands, restaurants, hospitality groups, private collectors, and events.
 
 ## Tech stack
 
@@ -37,8 +37,6 @@ Or connect the GitHub repository to Vercel and deploy from the dashboard.
 
 Before using this as the final business website, replace:
 
-- `[Name]` with the consultant's real name
-- `[Location]` with the correct market or service area
 - `hello@example.com` with the business email
 - `(555) 555-5555` with the business phone number
 - Any exact credentials, schools, certifications, awards, press mentions, or photos once verified

@@ -35,7 +35,7 @@ export default function Home() {
       <header className="relative isolate wine-texture text-[#fff9ef]">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8" aria-label="Main navigation">
           <a href="#top" className="font-serif text-2xl font-semibold tracking-wide">
-            [Name]
+            Andrew Misialek
           </a>
           <div className="hidden items-center gap-8 text-sm font-medium text-[#f6dfbf] md:flex">
             <a className="transition hover:text-white" href="#about">About</a>
@@ -47,10 +47,10 @@ export default function Home() {
         <section id="top" className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-10 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pb-32 lg:pt-20">
           <div className="flex flex-col justify-center">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.34em] text-[#d7b176]">
-              Wine consulting · [Location]
+              Wine consulting · Available anywhere
             </p>
             <h1 className="max-w-4xl font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
-              Expert Wine Consulting for Brands, Restaurants, Events, and Collectors
+              Expert Wine Consulting for Brands, Restaurants & Collectors
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#f3dfc7] sm:text-xl">
               Practical guidance from a wine manufacturing professional with formal wine education and hands-on industry experience.
@@ -107,13 +107,13 @@ export default function Home() {
         </div>
         <div className="space-y-6 text-lg leading-8 text-[#4a3d3e]">
           <p>
-            [Name] is a wine manufacturer, wine degree holder, and consultant helping wineries, restaurants, hospitality teams, collectors, event hosts, and wine brands make better decisions with confidence.
+            Andrew Misialek is a wine manufacturer, wine degree holder, and consultant helping wineries, restaurants, hospitality teams, collectors, event hosts, and wine brands make better decisions with confidence.
           </p>
           <p>
             His work spans wine selection, production, sourcing, tasting, education, and strategy. The approach is refined but grounded: clear recommendations, careful palate judgment, and practical guidance shaped by real wine manufacturing experience.
           </p>
           <p>
-            Based in [Location], [Name] works with clients who want wine expertise that is credible, usable, and connected to the realities of product quality, guest experience, and business performance.
+            Andrew works with clients anywhere who want wine expertise that is credible, usable, and connected to the realities of product quality, guest experience, and business performance.
           </p>
         </div>
       </section>
@@ -180,7 +180,7 @@ export default function Home() {
               Book a private consultation.
             </h2>
             <p className="mt-6 text-lg leading-8 text-[#4a3d3e]">
-              Share what you are building, improving, selecting, or planning. [Name] will follow up to discuss fit and next steps.
+              Share what you are building, improving, selecting, or planning. Andrew will follow up to discuss fit and next steps.
             </p>
             <div className="mt-8 space-y-3 text-[#211819]">
               <p><strong>Email:</strong> <a className="text-[#7d2940] underline-offset-4 hover:underline" href="mailto:hello@example.com">hello@example.com</a></p>
