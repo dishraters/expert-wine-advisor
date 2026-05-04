@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf4e8;
+  --foreground: #211819;
+  --burgundy: #4d0f20;
+  --burgundy-deep: #280812;
+  --cream: #fbf4e8;
+  --charcoal: #211819;
+  --gold: #b88746;
+  --rose: #7d2940;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at top left, rgba(184, 135, 70, 0.18), transparent 34rem),
+    linear-gradient(180deg, #fff9ef 0%, var(--background) 42%, #f7ead8 100%);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  color: #fff9ef;
+  background: var(--burgundy);
+}
+
+.wine-texture {
+  background-image:
+    radial-gradient(circle at 20% 18%, rgba(184, 135, 70, 0.28), transparent 18rem),
+    radial-gradient(circle at 80% 0%, rgba(125, 41, 64, 0.45), transparent 22rem),
+    linear-gradient(135deg, #260811 0%, #4d0f20 48%, #19050b 100%);
+}
+
+.gold-rule {
+  background: linear-gradient(90deg, transparent, rgba(184, 135, 70, 0.95), transparent);
+}
