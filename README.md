@@ -1,6 +1,6 @@
 # Expert Wine Advisor
 
-A premium, mobile-responsive wine consulting website built with Next.js and Tailwind CSS. The site positions Andrew Misialek, a wine manufacturing professional with formal viticulture education, as a credible advisor for wine brands, restaurants, hospitality groups, private collectors, and events.
+A premium, mobile-responsive wine consulting website built with Next.js and Tailwind CSS. The site positions Andrew Misialek, a wine manufacturing professional who studied viticulture at UC Davis, as a credible advisor for wine brands, restaurants, hospitality groups, private collectors, and events.
 
 ## Tech stack
 
