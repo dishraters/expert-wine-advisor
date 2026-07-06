@@ -33,6 +33,27 @@ const fitSignals = [
   "A hospitality team wants a tasting, training, or pairing experience that feels credible and useful.",
 ];
 
+const backgroundHighlights = [
+  {
+    title: "Wine school in Italy",
+    text: "Andrew's wine education in Italy gives clients a stronger frame for region, style, food, service, and the culture around the bottle.",
+    image: "/images/italy-wine-education-vineyard.jpg",
+    alt: "Italian vineyard terrace with wine glass, notebook, grape clusters, and golden hillside rows",
+  },
+  {
+    title: "Wine industry work in Napa",
+    text: "His Napa experience adds production judgment, cellar discipline, and a practical understanding of how wine moves from idea to finished product.",
+    image: "/images/napa-winery-barrel-room.jpg",
+    alt: "Napa-style winery barrel room with tasting glasses, oak barrels, and cellar equipment",
+  },
+  {
+    title: "Consulting in Pennsylvania",
+    text: "Andrew now consults in Pennsylvania for restaurants, hospitality teams, private collectors, tastings, events, and wine product decisions.",
+    image: "/images/pennsylvania-wine-consulting.jpg",
+    alt: "Pennsylvania wine consulting table with glasses, wine notes, and vineyard view",
+  },
+];
+
 const workflow = [
   {
     step: "1",
@@ -68,17 +89,22 @@ const faqs = [
   {
     question: "Who does Andrew Misialek work with?",
     answer:
-      "Andrew works with wine brands, restaurants, hospitality teams, private collectors, event hosts, and teams making production or product decisions.",
+      "Andrew works with Pennsylvania restaurants, hospitality teams, private collectors, event hosts, wine brands, and teams making production or product decisions.",
+  },
+  {
+    question: "What is Andrew's wine background?",
+    answer:
+      "Andrew went to wine school in Italy, worked in Napa, and now brings that background into practical wine consulting in Pennsylvania.",
   },
   {
     question: "Does Andrew only work in one location?",
     answer:
-      "No. The site is positioned for clients anywhere. Some work can happen remotely, while tastings, events, and in-person program work depend on the engagement.",
+      "Andrew consults in Pennsylvania and can discuss select remote or travel-based work depending on the client, tasting, event, or program need.",
   },
   {
     question: "What makes this different from a basic wine recommendation?",
     answer:
-      "Andrew combines palate judgment with wine manufacturing experience, so the advice connects taste, product quality, business use, and guest experience.",
+      "Andrew combines wine school in Italy, Napa wine industry experience, and palate judgment, so the advice connects taste, product quality, business use, and guest experience.",
   },
   {
     question: "Can Andrew help a restaurant improve its wine list?",
@@ -99,15 +125,23 @@ const jsonLd = [
     name: "Expert Wine Advisor",
     url: "https://expert-wine-advisor.vercel.app/",
     description:
-      "Wine consulting from Andrew Misialek for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
-    areaServed: "Available anywhere",
+      "Pennsylvania wine consulting from Andrew Misialek, shaped by wine school in Italy and Napa wine industry experience.",
+    areaServed: {
+      "@type": "State",
+      name: "Pennsylvania",
+    },
     founder: {
       "@type": "Person",
       name: "Andrew Misialek",
       jobTitle: "Wine Consultant",
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "Wine school in Italy",
+      },
       knowsAbout: [
         "Wine consulting",
-        "Viticulture",
+        "Italian wine education",
+        "Napa wine industry",
         "Wine manufacturing",
         "Restaurant wine programs",
         "Private wine collections",
@@ -164,13 +198,13 @@ export default function Home() {
         >
           <div className="flex flex-col justify-center">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[#d7b176]">
-              Wine consulting for brands, restaurants, collectors, and events
+              Pennsylvania wine consulting · Italy trained · Napa experienced
             </p>
             <h1 className="max-w-4xl font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.02em] sm:text-6xl lg:text-7xl">
-              Andrew Misialek wine consulting for better lists, bottles, and product decisions
+              Andrew Misialek wine consulting in PA for better lists, bottles, and product decisions
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#f3dfc7] sm:text-xl">
-              Get practical wine guidance from a manufacturing professional who studied viticulture at UC Davis and understands how wine choices show up in restaurants, brands, collections, tastings, and production rooms.
+              Get practical wine guidance from a consultant shaped by wine school in Italy, wine industry work in Napa, and hands-on production judgment for restaurants, brands, collectors, tastings, and events.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
@@ -188,28 +222,19 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="relative min-h-[430px] rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-2xl shadow-black/30 backdrop-blur">
-            <div className="absolute inset-5 rounded-[1.5rem] border border-[#d7b176]/25" />
-            <div className="relative flex h-full flex-col justify-between rounded-[1.5rem] bg-[#fff9ef] p-8 text-[#211819]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7d2940]">
-                  Available anywhere
-                </p>
-                <div className="gold-rule my-6 h-px" />
-                <h2 className="font-serif text-4xl font-semibold leading-tight text-[#4d0f20]">
-                  Wine advice built around the decision you need to make next.
-                </h2>
-              </div>
-              <div className="mt-12 grid gap-4 sm:grid-cols-2">
-                {["Wine brands", "Restaurants", "Private cellars", "Events"].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-[#ead8bc] bg-[#fffdf8] p-4 text-sm font-semibold text-[#4d0f20]"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
+          <aside className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-2xl shadow-black/30 backdrop-blur">
+            <img
+              src="/images/italy-wine-education-vineyard.jpg"
+              alt="Italian vineyard terrace with wine glass, notebook, grape clusters, and golden hillside rows"
+              className="h-[430px] w-full rounded-[1.5rem] object-cover"
+            />
+            <div className="absolute inset-x-10 bottom-10 rounded-2xl bg-[#fff9ef]/95 p-6 text-[#211819] shadow-2xl shadow-black/25">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7d2940]">
+                Wine school in Italy
+              </p>
+              <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#4d0f20]">
+                European wine education, Napa work, and Pennsylvania consulting.
+              </h2>
             </div>
           </aside>
         </section>
@@ -224,11 +249,25 @@ export default function Home() {
         </div>
         <div className="space-y-6 text-lg leading-8 text-[#4a3d3e]">
           <p>
-            Andrew Misialek helps clients choose, position, serve, explain, and improve wine. His value sits between palate, production, and practical use: the bottle has to taste right, make sense for the audience, and support the business or personal goal behind it.
+            Andrew Misialek helps clients choose, position, serve, explain, and improve wine. His background runs through wine school in Italy, work in Napa, and consulting in Pennsylvania, so his advice connects taste, product quality, business use, and guest experience.
           </p>
           <p>
-            He studied viticulture at UC Davis and works from real wine manufacturing experience. That background matters when a recommendation has to survive beyond the tasting table.
+            That mix matters when a recommendation has to survive beyond the tasting table. The bottle has to taste right, fit the audience, and support the business or personal goal behind it.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+        <div className="grid gap-5 lg:grid-cols-3">
+          {backgroundHighlights.map((item) => (
+            <article key={item.title} className="overflow-hidden rounded-[1.5rem] border border-[#ead8bc] bg-[#fffdf8] shadow-sm">
+              <img src={item.image} alt={item.alt} className="h-64 w-full object-cover" />
+              <div className="p-6">
+                <h2 className="font-serif text-3xl font-semibold text-[#4d0f20]">{item.title}</h2>
+                <p className="mt-4 leading-7 text-[#4a3d3e]">{item.text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -349,7 +388,7 @@ export default function Home() {
               Bring Andrew the wine decision, not a vague request.
             </h2>
             <p className="mt-6 text-lg leading-8 text-[#f0ddc8]">
-              Share the setting, audience, budget, timeline, and what success should look like. That gives Andrew enough context to decide the right shape of consultation.
+              Share the Pennsylvania setting, audience, budget, timeline, and what success should look like. That gives Andrew enough context to decide the right shape of consultation.
             </p>
           </div>
           <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.08] p-6">

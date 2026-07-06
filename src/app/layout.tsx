@@ -18,11 +18,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Andrew Misialek Wine Consulting | Expert Wine Advisor",
+    default: "Andrew Misialek Wine Consulting in PA | Italy & Napa Wine Experience",
     template: "%s | Expert Wine Advisor",
   },
   description:
-    "Wine consulting from Andrew Misialek for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
+    "Pennsylvania wine consulting from Andrew Misialek, shaped by wine school in Italy and Napa wine industry experience.",
   alternates: {
     canonical: "/",
   },
@@ -31,23 +31,34 @@ export const metadata: Metadata = {
     "wine consultant",
     "restaurant wine program consulting",
     "wine brand consulting",
+    "Pennsylvania wine consultant",
+    "Napa wine consultant",
     "private wine collection advisor",
     "wine tasting consultant",
   ],
   openGraph: {
-    title: "Andrew Misialek Wine Consulting | Expert Wine Advisor",
+    title: "Andrew Misialek Wine Consulting in PA",
     description:
-      "Wine consulting for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
+      "Wine consulting in Pennsylvania from Andrew Misialek, with wine education in Italy and Napa wine industry experience.",
     url: siteUrl,
     type: "website",
     locale: "en_US",
     siteName: "Expert Wine Advisor",
+    images: [
+      {
+        url: "/images/italy-wine-education-vineyard.jpg",
+        width: 1800,
+        height: 1029,
+        alt: "Italian vineyard terrace with wine glass, notebook, and hillside vineyard rows",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Andrew Misialek Wine Consulting | Expert Wine Advisor",
+    title: "Andrew Misialek Wine Consulting in PA",
     description:
-      "Wine consulting for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
+      "Wine consulting in Pennsylvania from Andrew Misialek, with wine education in Italy and Napa wine industry experience.",
+    images: ["/images/italy-wine-education-vineyard.jpg"],
   },
   robots: {
     index: true,
