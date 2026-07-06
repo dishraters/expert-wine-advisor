@@ -33,12 +33,12 @@ vercel --prod
 
 Or connect the GitHub repository to Vercel and deploy from the dashboard.
 
-## Placeholders to replace
+## Contact details to connect
 
-Before using this as the final business website, replace:
+Before using this as the final business website, connect Andrew's real contact path:
 
-- `hello@example.com` with the business email
-- `(555) 555-5555` with the business phone number
-- Any exact credentials, schools, certifications, awards, press mentions, or photos once verified
+- business email, booking form, or intro channel
+- phone number only if Andrew wants it public
+- any exact credentials, certifications, awards, press mentions, or photos once verified
 
-No specific schools, certifications, awards, or unverifiable claims are included in the current copy.
+The live page does not publish fake email or phone details. No unverifiable awards, press mentions, or certifications are included in the current copy.

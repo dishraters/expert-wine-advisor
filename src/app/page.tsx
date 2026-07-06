@@ -1,119 +1,233 @@
 const services = [
   {
     title: "Wine Brand Consulting",
-    text: "Product positioning, tasting notes, market fit, and go-to-market support for wine brands that need clearer direction and stronger buyer appeal.",
+    intent: "For producers, importers, and emerging labels",
+    text: "Clarify product positioning, tasting language, buyer fit, and the story behind the bottle before you present it to trade or customers.",
   },
   {
-    title: "Restaurant & Hospitality Wine Programs",
-    text: "Wine list development, pairing strategy, staff education, and vendor selection for restaurants, hotels, and hospitality groups.",
+    title: "Restaurant Wine Program Consulting",
+    intent: "For restaurants, hotels, and hospitality teams",
+    text: "Build a list that fits the menu, price point, staff knowledge, storage limits, and the way guests actually order wine.",
   },
   {
-    title: "Private Collection Consulting",
-    text: "Cellar planning, bottle selection, sourcing guidance, and collection organization for private collectors building with intention.",
+    title: "Private Collection Advisory",
+    intent: "For collectors and hosts",
+    text: "Plan purchases, organize bottles, choose serving windows, and shape a cellar around what you drink, gift, host, and age.",
   },
   {
-    title: "Wine Events & Tastings",
-    text: "Guided tastings, private events, corporate experiences, and approachable education that makes wine feel memorable and useful.",
+    title: "Guided Tastings & Events",
+    intent: "For private dinners and corporate groups",
+    text: "Create a tasting that feels polished without turning the room into a lecture. Guests leave with context they can use.",
   },
   {
     title: "Production & Manufacturing Advisory",
-    text: "Practical support for winemaking operations, product quality, and process improvement grounded in hands-on production experience.",
+    intent: "For teams making product decisions",
+    text: "Use practical production judgment to evaluate quality, process, flavor direction, sourcing, and market-ready presentation.",
   },
 ];
 
-const reasons = [
-  "Viticulture study at UC Davis",
-  "Real wine manufacturing experience",
-  "Practical, not theoretical, recommendations",
-  "Strong palate and product judgment",
-  "Ability to translate wine expertise into business decisions",
+const fitSignals = [
+  "A restaurant needs a wine list guests can understand and staff can sell.",
+  "A wine brand needs clearer positioning before a distributor, retailer, or buyer meeting.",
+  "A collector wants help buying, organizing, serving, or aging bottles with more intention.",
+  "A hospitality team wants a tasting, training, or pairing experience that feels credible and useful.",
+];
+
+const workflow = [
+  {
+    step: "1",
+    title: "Define the decision",
+    text: "Andrew starts with the business, event, collection, or product choice you need to make.",
+  },
+  {
+    step: "2",
+    title: "Review the constraints",
+    text: "Budget, audience, menu, sourcing, storage, timing, and brand position shape the recommendation.",
+  },
+  {
+    step: "3",
+    title: "Taste, assess, or plan",
+    text: "The work can include list review, bottle selection, pairing direction, tasting notes, staff guidance, or product feedback.",
+  },
+  {
+    step: "4",
+    title: "Leave with next steps",
+    text: "You get practical recommendations you can act on, not abstract wine theory.",
+  },
+];
+
+const deliverables = [
+  ["Restaurant or hospitality program", "Wine list review, pairings, vendor notes, staff talking points"],
+  ["Wine brand or producer", "Positioning notes, tasting language, product feedback, buyer-facing improvements"],
+  ["Private collection", "Buying guidance, cellar organization, serving windows, occasion planning"],
+  ["Event or tasting", "Wine theme, bottle lineup, pacing, guest education, serving notes"],
+  ["Production decision", "Product quality notes, process input, flavor direction, practical tradeoffs"],
+];
+
+const faqs = [
+  {
+    question: "Who does Andrew Misialek work with?",
+    answer:
+      "Andrew works with wine brands, restaurants, hospitality teams, private collectors, event hosts, and teams making production or product decisions.",
+  },
+  {
+    question: "Does Andrew only work in one location?",
+    answer:
+      "No. The site is positioned for clients anywhere. Some work can happen remotely, while tastings, events, and in-person program work depend on the engagement.",
+  },
+  {
+    question: "What makes this different from a basic wine recommendation?",
+    answer:
+      "Andrew combines palate judgment with wine manufacturing experience, so the advice connects taste, product quality, business use, and guest experience.",
+  },
+  {
+    question: "Can Andrew help a restaurant improve its wine list?",
+    answer:
+      "Yes. He can review wine list structure, pairing fit, staff talking points, guest readability, vendor choices, and pricing alignment.",
+  },
+  {
+    question: "Can Andrew help private collectors?",
+    answer:
+      "Yes. Collection work can include bottle selection, cellar organization, buying priorities, serving windows, and planning wine for dinners or events.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Expert Wine Advisor",
+    url: "https://expert-wine-advisor.vercel.app/",
+    description:
+      "Wine consulting from Andrew Misialek for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
+    areaServed: "Available anywhere",
+    founder: {
+      "@type": "Person",
+      name: "Andrew Misialek",
+      jobTitle: "Wine Consultant",
+      knowsAbout: [
+        "Wine consulting",
+        "Viticulture",
+        "Wine manufacturing",
+        "Restaurant wine programs",
+        "Private wine collections",
+      ],
+    },
+    serviceType: [
+      "Wine brand consulting",
+      "Restaurant wine program consulting",
+      "Private collection advisory",
+      "Wine events and tastings",
+      "Production and manufacturing advisory",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  },
 ];
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="relative isolate wine-texture text-[#fff9ef]">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8" aria-label="Main navigation">
+        <nav
+          className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8"
+          aria-label="Main navigation"
+        >
           <a href="#top" className="font-serif text-2xl font-semibold tracking-wide">
             Andrew Misialek
           </a>
           <div className="hidden items-center gap-8 text-sm font-medium text-[#f6dfbf] md:flex">
-            <a className="transition hover:text-white" href="#about">About</a>
             <a className="transition hover:text-white" href="#services">Services</a>
+            <a className="transition hover:text-white" href="#process">Process</a>
+            <a className="transition hover:text-white" href="#faq">FAQ</a>
             <a className="transition hover:text-white" href="#contact">Contact</a>
           </div>
         </nav>
 
-        <section id="top" className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-10 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pb-32 lg:pt-20">
+        <section
+          id="top"
+          className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-28 lg:pt-20"
+        >
           <div className="flex flex-col justify-center">
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.34em] text-[#d7b176]">
-              Wine consulting · Available anywhere
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[#d7b176]">
+              Wine consulting for brands, restaurants, collectors, and events
             </p>
-            <h1 className="max-w-4xl font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
-              Expert Wine Consulting for Brands, Restaurants & Collectors
+            <h1 className="max-w-4xl font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.02em] sm:text-6xl lg:text-7xl">
+              Andrew Misialek wine consulting for better lists, bottles, and product decisions
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#f3dfc7] sm:text-xl">
-              Practical guidance from a wine manufacturing professional who studied viticulture at UC Davis and brings hands-on industry experience.
+              Get practical wine guidance from a manufacturing professional who studied viticulture at UC Davis and understands how wine choices show up in restaurants, brands, collections, tastings, and production rooms.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#contact"
-                className="rounded-full bg-[#d7b176] px-7 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#280812] shadow-2xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-[#f0ca8c]"
+                className="rounded-full bg-[#d7b176] px-7 py-4 text-center text-sm font-bold uppercase tracking-[0.14em] text-[#280812] shadow-2xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-[#f0ca8c]"
               >
-                Book a Consultation
+                Book a Wine Consultation
               </a>
               <a
                 href="#services"
-                className="rounded-full border border-[#d7b176]/60 px-7 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#fff9ef] transition hover:-translate-y-0.5 hover:border-[#f0ca8c] hover:bg-white/10"
+                className="rounded-full border border-[#d7b176]/60 px-7 py-4 text-center text-sm font-bold uppercase tracking-[0.14em] text-[#fff9ef] transition hover:-translate-y-0.5 hover:border-[#f0ca8c] hover:bg-white/10"
               >
-                View Services
+                See Consulting Services
               </a>
             </div>
           </div>
 
-          <div className="relative min-h-[420px] rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-2xl shadow-black/30 backdrop-blur">
+          <aside className="relative min-h-[430px] rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-2xl shadow-black/30 backdrop-blur">
             <div className="absolute inset-5 rounded-[1.5rem] border border-[#d7b176]/25" />
             <div className="relative flex h-full flex-col justify-between rounded-[1.5rem] bg-[#fff9ef] p-8 text-[#211819]">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#7d2940]">Boutique advisory</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7d2940]">
+                  Available anywhere
+                </p>
                 <div className="gold-rule my-6 h-px" />
                 <h2 className="font-serif text-4xl font-semibold leading-tight text-[#4d0f20]">
-                  Wine expertise that connects product, palate, and business outcomes.
+                  Wine advice built around the decision you need to make next.
                 </h2>
               </div>
               <div className="mt-12 grid gap-4 sm:grid-cols-2">
-                {[
-                  "Brand strategy",
-                  "Wine programs",
-                  "Private cellars",
-                  "Production support",
-                ].map((item) => (
-                  <div key={item} className="rounded-2xl border border-[#ead8bc] bg-[#fffdf8] p-4 text-sm font-semibold text-[#4d0f20]">
+                {["Wine brands", "Restaurants", "Private cellars", "Events"].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-[#ead8bc] bg-[#fffdf8] p-4 text-sm font-semibold text-[#4d0f20]"
+                  >
                     {item}
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </aside>
         </section>
       </header>
 
-      <section id="about" className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#b88746]">About</p>
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#b88746]">Direct answer</p>
           <h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.02em] text-[#4d0f20] sm:text-5xl">
-            Trained wine professional. Practical industry operator.
+            Hire Andrew when a wine decision needs taste and business judgment.
           </h2>
         </div>
         <div className="space-y-6 text-lg leading-8 text-[#4a3d3e]">
           <p>
-            Andrew Misialek is a wine manufacturer who studied viticulture at UC Davis and brings consulting experience helping wineries, restaurants, hospitality teams, collectors, event hosts, and wine brands make better decisions with confidence.
+            Andrew Misialek helps clients choose, position, serve, explain, and improve wine. His value sits between palate, production, and practical use: the bottle has to taste right, make sense for the audience, and support the business or personal goal behind it.
           </p>
           <p>
-            His work spans wine selection, production, sourcing, tasting, education, and strategy. The approach is refined but grounded: clear recommendations, careful palate judgment, and practical guidance shaped by real wine manufacturing experience.
-          </p>
-          <p>
-            Andrew works with clients anywhere who want wine expertise that is credible, usable, and connected to the realities of product quality, guest experience, and business performance.
+            He studied viticulture at UC Davis and works from real wine manufacturing experience. That background matters when a recommendation has to survive beyond the tasting table.
           </p>
         </div>
       </section>
@@ -121,16 +235,21 @@ export default function Home() {
       <section id="services" className="bg-[#211819] px-6 py-24 text-[#fff9ef] lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d7b176]">Services</p>
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#d7b176]">Services</p>
             <h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-              Consulting for every point where wine decisions matter.
+              Wine consulting services with clear buyer intent.
             </h2>
           </div>
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <article key={service.title} className="rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-7 shadow-xl shadow-black/10 transition hover:-translate-y-1 hover:border-[#d7b176]/50 hover:bg-white/[0.09]">
-                <span className="font-serif text-4xl text-[#d7b176]">0{index + 1}</span>
-                <h3 className="mt-6 font-serif text-2xl font-semibold">{service.title}</h3>
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-7 shadow-xl shadow-black/10 transition hover:-translate-y-1 hover:border-[#d7b176]/50 hover:bg-white/[0.09]"
+              >
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#d7b176]">
+                  {service.intent}
+                </p>
+                <h3 className="mt-5 font-serif text-2xl font-semibold">{service.title}</h3>
                 <p className="mt-4 leading-7 text-[#e8d7c6]">{service.text}</p>
               </article>
             ))}
@@ -138,79 +257,113 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="rounded-[2rem] bg-[#4d0f20] p-8 text-[#fff9ef] sm:p-10">
-          <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#d7b176]">Why work with him</p>
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#d7b176]">Good fit</p>
           <h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-            Premium advice with operational judgment behind it.
+            Use Andrew when the answer affects money, guests, inventory, or reputation.
           </h2>
           <p className="mt-6 leading-8 text-[#efdac1]">
-            The value is not just knowing wine. It is knowing how to turn wine expertise into confident decisions for products, guests, collections, teams, and experiences.
+            A simple bottle suggestion is easy. A wine decision with budget, audience, service, storage, product quality, or brand stakes needs a tighter read.
           </p>
         </div>
         <div className="grid gap-4">
-          {reasons.map((reason) => (
-            <div key={reason} className="flex items-start gap-4 rounded-2xl border border-[#ead8bc] bg-[#fffdf8] p-5 shadow-sm">
-              <span className="mt-1 h-3 w-3 rounded-full bg-[#b88746] shadow-[0_0_0_6px_rgba(184,135,70,0.14)]" />
+          {fitSignals.map((reason) => (
+            <div
+              key={reason}
+              className="flex items-start gap-4 rounded-2xl border border-[#ead8bc] bg-[#fffdf8] p-5 shadow-sm"
+            >
+              <span className="mt-1 h-3 w-3 shrink-0 rounded-full bg-[#b88746] shadow-[0_0_0_6px_rgba(184,135,70,0.14)]" />
               <p className="text-lg font-semibold text-[#211819]">{reason}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="px-6 pb-24 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-[2rem] wine-texture p-8 text-center text-[#fff9ef] shadow-2xl shadow-[#4d0f20]/20 sm:p-14">
-          <h2 className="font-serif text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-            Ready to improve your wine program, brand, or collection?
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#f0ddc8]">
-            Start with a focused consultation to define the opportunity, the constraints, and the most practical next steps.
-          </p>
-          <a href="#contact" className="mt-8 inline-flex rounded-full bg-[#d7b176] px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-[#280812] transition hover:-translate-y-0.5 hover:bg-[#f0ca8c]">
-            Book a Consultation
-          </a>
-        </div>
-      </section>
-
-      <section id="contact" className="bg-[#fffdf8] px-6 py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#b88746]">Contact</p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.02em] text-[#4d0f20] sm:text-5xl">
-              Book a private consultation.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-[#4a3d3e]">
-              Share what you are building, improving, selecting, or planning. Andrew will follow up to discuss fit and next steps.
-            </p>
-            <div className="mt-8 space-y-3 text-[#211819]">
-              <p><strong>Email:</strong> <a className="text-[#7d2940] underline-offset-4 hover:underline" href="mailto:hello@example.com">hello@example.com</a></p>
-              <p><strong>Phone:</strong> <a className="text-[#7d2940] underline-offset-4 hover:underline" href="tel:+15555555555">(555) 555-5555</a></p>
+      <section id="process" className="bg-[#fffdf8] px-6 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#b88746]">Process</p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.02em] text-[#4d0f20] sm:text-5xl">
+                A focused consulting workflow.
+              </h2>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {workflow.map((item) => (
+                <article key={item.title} className="rounded-2xl border border-[#ead8bc] bg-white p-6 shadow-sm">
+                  <span className="font-serif text-4xl font-semibold text-[#b88746]">{item.step}</span>
+                  <h3 className="mt-4 font-serif text-2xl font-semibold text-[#4d0f20]">{item.title}</h3>
+                  <p className="mt-3 leading-7 text-[#4a3d3e]">{item.text}</p>
+                </article>
+              ))}
             </div>
           </div>
 
-          <form className="rounded-[2rem] border border-[#ead8bc] bg-white p-6 shadow-xl shadow-[#4d0f20]/5 sm:p-8" action="mailto:hello@example.com" method="post" encType="text/plain">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="flex flex-col gap-2 text-sm font-semibold text-[#4d0f20]">
-                Name
-                <input required name="name" className="rounded-xl border border-[#ead8bc] bg-[#fffdf8] px-4 py-3 text-[#211819] outline-none transition focus:border-[#b88746] focus:ring-4 focus:ring-[#b88746]/15" />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-semibold text-[#4d0f20]">
-                Email
-                <input required name="email" type="email" className="rounded-xl border border-[#ead8bc] bg-[#fffdf8] px-4 py-3 text-[#211819] outline-none transition focus:border-[#b88746] focus:ring-4 focus:ring-[#b88746]/15" />
-              </label>
-            </div>
-            <label className="mt-5 flex flex-col gap-2 text-sm font-semibold text-[#4d0f20]">
-              Company / Project
-              <input name="company" className="rounded-xl border border-[#ead8bc] bg-[#fffdf8] px-4 py-3 text-[#211819] outline-none transition focus:border-[#b88746] focus:ring-4 focus:ring-[#b88746]/15" />
-            </label>
-            <label className="mt-5 flex flex-col gap-2 text-sm font-semibold text-[#4d0f20]">
-              What do you need help with?
-              <textarea required name="message" rows={5} className="rounded-xl border border-[#ead8bc] bg-[#fffdf8] px-4 py-3 text-[#211819] outline-none transition focus:border-[#b88746] focus:ring-4 focus:ring-[#b88746]/15" />
-            </label>
-            <button type="submit" className="mt-6 w-full rounded-full bg-[#4d0f20] px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-[#fff9ef] transition hover:-translate-y-0.5 hover:bg-[#7d2940]">
-              Submit
-            </button>
-          </form>
+          <div className="mt-16 overflow-hidden rounded-[1.5rem] border border-[#ead8bc] bg-white shadow-sm">
+            <table className="w-full border-collapse text-left">
+              <caption className="sr-only">Wine consulting deliverables by client type</caption>
+              <thead className="bg-[#4d0f20] text-[#fff9ef]">
+                <tr>
+                  <th scope="col" className="px-5 py-4 text-sm uppercase tracking-[0.16em]">Client need</th>
+                  <th scope="col" className="px-5 py-4 text-sm uppercase tracking-[0.16em]">Possible deliverables</th>
+                </tr>
+              </thead>
+              <tbody>
+                {deliverables.map(([need, output]) => (
+                  <tr key={need} className="border-t border-[#ead8bc]">
+                    <th scope="row" className="px-5 py-4 align-top font-serif text-xl text-[#4d0f20]">
+                      {need}
+                    </th>
+                    <td className="px-5 py-4 leading-7 text-[#4a3d3e]">{output}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#b88746]">FAQ</p>
+          <h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.02em] text-[#4d0f20] sm:text-5xl">
+            Questions people ask before hiring a wine consultant.
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          {faqs.map((faq) => (
+            <article key={faq.question} className="rounded-2xl border border-[#ead8bc] bg-[#fffdf8] p-6">
+              <h3 className="font-serif text-2xl font-semibold text-[#4d0f20]">{faq.question}</h3>
+              <p className="mt-3 leading-7 text-[#4a3d3e]">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="px-6 pb-24 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 rounded-[2rem] wine-texture p-8 text-[#fff9ef] shadow-2xl shadow-[#4d0f20]/20 sm:p-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#d7b176]">Start the conversation</p>
+            <h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
+              Bring Andrew the wine decision, not a vague request.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-[#f0ddc8]">
+              Share the setting, audience, budget, timeline, and what success should look like. That gives Andrew enough context to decide the right shape of consultation.
+            </p>
+          </div>
+          <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.08] p-6">
+            <h3 className="font-serif text-3xl font-semibold">Useful details to send</h3>
+            <ul className="mt-6 space-y-4 text-[#f0ddc8]">
+              <li>Client type: restaurant, brand, collector, event, or production team</li>
+              <li>The decision you need help making</li>
+              <li>Timeline, budget range, and location if in-person work matters</li>
+              <li>Any current list, bottle lineup, product notes, or event plan</li>
+            </ul>
+            <p className="mt-8 rounded-2xl bg-[#fff9ef] p-5 font-semibold leading-7 text-[#4d0f20]">
+              Contact details are not published yet, so use your existing introduction channel for Andrew until the business email or booking form is connected.
+            </p>
+          </div>
         </div>
       </section>
     </main>

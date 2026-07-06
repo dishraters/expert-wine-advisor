@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = "https://expert-wine-advisor.vercel.app";
+
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
@@ -14,22 +16,42 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Wine Consulting Services | Expert Wine Advisor",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Andrew Misialek Wine Consulting | Expert Wine Advisor",
+    template: "%s | Expert Wine Advisor",
+  },
   description:
-    "Expert wine consulting for brands, restaurants, hospitality groups, private collectors, and events.",
+    "Wine consulting from Andrew Misialek for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
+  alternates: {
+    canonical: "/",
+  },
+  keywords: [
+    "wine consulting",
+    "wine consultant",
+    "restaurant wine program consulting",
+    "wine brand consulting",
+    "private wine collection advisor",
+    "wine tasting consultant",
+  ],
   openGraph: {
-    title: "Wine Consulting Services | Expert Wine Advisor",
+    title: "Andrew Misialek Wine Consulting | Expert Wine Advisor",
     description:
-      "Expert wine consulting for brands, restaurants, hospitality groups, private collectors, and events.",
+      "Wine consulting for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
+    url: siteUrl,
     type: "website",
     locale: "en_US",
     siteName: "Expert Wine Advisor",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wine Consulting Services | Expert Wine Advisor",
+    title: "Andrew Misialek Wine Consulting | Expert Wine Advisor",
     description:
-      "Expert wine consulting for brands, restaurants, hospitality groups, private collectors, and events.",
+      "Wine consulting for brands, restaurants, hospitality teams, private collectors, events, and production decisions.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
